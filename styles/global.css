@@ -1,0 +1,46 @@
+:root {
+  --textColor: #2d3748;
+  --textColorLight: #a0aec0;
+  --backgroundColor: #f7f9f9;
+  --uiColor: #e7742e;
+  --MonospaceFont: Monaco, Terminal, monospace;
+}
+
+body {
+  overflow: hidden;
+  color: var(--textColor);
+  font-size: 14px;
+  background: var(--backgroundColor);
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0 12px;
+  width: auto;
+  height: 40px;
+  overflow: visible;
+  background: transparent;
+  border-radius: 4px;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button:active {
+  opacity: 0.9;
+}
+
+button[disabled] {
+  background: #ccc !important;
+}

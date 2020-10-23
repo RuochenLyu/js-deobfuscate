@@ -135,7 +135,7 @@ export default function Form({ onChange }) {
           }
           input[type='radio']:checked + span {
             color: var(--uiColor);
-            font-weight: 500;
+            font-weight: bold;
           }
           .buttons {
             display: flex;

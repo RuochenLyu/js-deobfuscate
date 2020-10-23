@@ -2,7 +2,7 @@ import NextHead from 'next/head';
 
 export default function Layout({
   children,
-  title = 'de4js | JavaScript Deobfuscator',
+  title = 'de4js - JavaScript Deobfuscator',
   description = 'JavaScript Deobfuscator and Unpacker',
   url = 'https://de4js.kshift.me',
   image = 'https://de4js.kshift.me/card.png',

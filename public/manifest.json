@@ -1,0 +1,21 @@
+{
+  "name": "Thumbnail Hunter",
+  "short_name": "Thumbnail Hunter",
+  "description": "A simple tool that allows you to download the image thumbnail of any YouTube video by entering the URL of the video.",
+  "background_color": "#edf2f7",
+  "theme_color": "#edf2f7",
+  "display": "minimal-ui",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/touch-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/touch-icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

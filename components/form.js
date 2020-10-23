@@ -115,7 +115,6 @@ export default function Form({ onChange }) {
             outline: none;
             border: none;
             resize: none;
-            font-family: var(--MonospaceFont);
           }
           .settings {
             display: flex;
@@ -128,12 +127,11 @@ export default function Form({ onChange }) {
             display: inline-flex;
             align-items: center;
             margin-right: 12px;
-            font-family: var(--MonospaceFont);
             letter-spacing: -0.5px;
             cursor: pointer;
           }
           input[type='radio'] {
-            margin-right: 4px;
+            margin: 0 4px 0 0;
           }
           input[type='radio']:checked + span {
             color: var(--uiColor);

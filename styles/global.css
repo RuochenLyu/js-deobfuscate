@@ -7,9 +7,9 @@
 }
 
 body {
-  overflow: hidden;
   color: var(--textColor);
   font-size: 14px;
+  font-family: var(--MonospaceFont);
   background: var(--backgroundColor);
 }
 

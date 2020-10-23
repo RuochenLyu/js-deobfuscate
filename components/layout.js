@@ -2,10 +2,10 @@ import NextHead from 'next/head';
 
 export default function Layout({
   children,
-  title = 'JS Deobfuscate',
+  title = 'de4js | JavaScript Deobfuscator',
   description = 'JavaScript Deobfuscator and Unpacker',
-  url = 'https://jsdeo.now.sh',
-  image = 'https://jsdeo.now.sh/card.png',
+  url = 'https://de4js.kshift.me',
+  image = 'https://de4js.kshift.me/card.png',
 }) {
   return (
     <>
@@ -20,6 +20,7 @@ export default function Layout({
         <link rel="icon" sizes="192x192" href="/touch-icon.png" />
         <link rel="apple-touch-icon" href="/touch-icon.png" />
         <link rel="icon" href="/favicon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <meta property="og:url" content={url} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />

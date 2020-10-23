@@ -1,31 +1,36 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { js_beautify as jsBeautify } from 'js-beautify';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import 'highlight.js/styles/github.css';
 import useClipboard from '@/modules/hooks/use-clipboard';
 
-export default function Output({ content }) {
+export default function Output({ content: contentProp }) {
   const element = useRef();
   const { copy } = useClipboard();
+  const [content, setContent] = useState();
 
   useEffect(() => {
     hljs.registerLanguage('javascript', javascript);
   }, []);
 
   useEffect(() => {
+    setContent(jsBeautify(contentProp));
+  }, [contentProp]);
+
+  useEffect(() => {
     hljs.highlightBlock(element.current);
   }, [content]);
 
   const handleCopy = () => {
-    copy(jsBeautify(content));
+    copy(content);
   };
 
   return (
     <main>
       <pre>
         <code ref={element} className="code">
-          {jsBeautify(content)}
+          {content}
         </code>
       </pre>
 

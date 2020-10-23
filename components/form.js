@@ -1,23 +1,16 @@
 import { useState, useRef } from 'react';
-import {
-  autoscan,
-  uneval,
-  decsojson4,
-  decsojsonp,
-  dec_sojsonv5_default as decSojsonv5Default,
-  dec_jsjiamiv6_default as decJsjiamiv6Default,
-  obdec_default as obdecDefault,
-} from '@/lib/deobfuscate';
 import useKeyPress from '@/modules/hooks/use-key-press';
+import JavascriptObfuscator from '@/lib/javascriptobfuscator_unpacker';
 
 const TYPES_MAPPING = {
-  Auto: autoscan,
-  Eval: uneval,
-  'sojson v4': decsojson4,
-  'sojson 高级版': decsojsonp,
-  'sojson v5': decSojsonv5Default,
-  'jsjiami v6': decJsjiamiv6Default,
-  'JS Obfuscator': obdecDefault,
+  Auto: process.browser && window.autoscan,
+  Eval: process.browser && window.uneval,
+  'sojson v4': process.browser && window.decsojson4,
+  'sojson 高级版': process.browser && window.decsojsonp,
+  'sojson v5': process.browser && window.dec_sojsonv5_default,
+  'jsjiami v6': process.browser && window.dec_jsjiamiv6_default,
+  'JS Obfuscator': process.browser && window.obdec_default,
+  Unpacker: process.browser && JavascriptObfuscator.unpack,
 };
 
 export default function Form({ onChange }) {

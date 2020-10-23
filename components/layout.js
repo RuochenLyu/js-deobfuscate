@@ -31,6 +31,7 @@ export default function Layout({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="referrer" content="no-referrer" />
+        <script type="text/javascript" src="/lib/jsdec.js"></script>
       </NextHead>
 
       <div className="container">{children}</div>

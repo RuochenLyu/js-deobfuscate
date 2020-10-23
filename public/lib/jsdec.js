@@ -19,8 +19,8 @@ function autoscan(jsf) {
   if (jsf.indexOf("var encode_version = 'sojson.v5',") != -1) {
     return dec_sojsonv5_default(jsf);
   }
-  if (jsf.indexOf("'jsjiami.com.v6'") != -1) {
-    return dec_jsjiamiv6_default(jsf);
+  if (jsf.indexOf("'jsjiami.com'") != -1) {
+    return obdec_default(jsf);
   }
   if (jsf.indexOf("'];(function(_0x") != -1) {
     return obdec_default(jsf);
@@ -75,13 +75,6 @@ function decsojson4(jsf) {
   return str;
 }
 
-// function obdec_default(jsf) {
-//   try {
-//     return JavascriptObfuscator.unpack(jsf);
-//   } catch (e) {
-//     return `Failed!\nthrowed:${e}`;
-//   }
-// }
 function obdec_default(jsf, thr1 = false, throwederror = '') {
   const ojs = jsf;
   let spljs;
@@ -155,17 +148,12 @@ function obdec_default(jsf, thr1 = false, throwederror = '') {
 
 function dec_sojsonv5_default(jsf) {
   if (jsf.indexOf("sojson.v5',") == -1) {
-    return 'Failed\nNot Encoded as sojsonv5';
+    return 'Failed\nNot Encoded as sojson.v5';
   }
   jsf = jsf.substring(jsf.indexOf("sojson.v5',") + 12, jsf.length);
   jsf = `var ${jsf.substring(jsf.indexOf(',   ') + 2, jsf.length)}`;
   const js = obdec_default(jsf);
   return js.substring(0, js.indexOf('(function(_0x'));
-}
-
-function dec_jsjiamiv6_default(jsf) {
-  const js = obdec_default(jsf);
-  return js.substring(0, js.lastIndexOf(';'));
 }
 
 function dec_list(jsf) {

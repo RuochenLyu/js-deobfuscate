@@ -14,6 +14,9 @@ export default function Header() {
         <a href="https://beautifier.io/" target="_blank" rel="noreferrer">
           Beautifier
         </a>
+        <a href="https://jsdec.js.org/" target="_blank" rel="noreferrer">
+          JSDec
+        </a>
         <a
           href="https://lelinhtinh.github.io/de4js/"
           target="_blank"

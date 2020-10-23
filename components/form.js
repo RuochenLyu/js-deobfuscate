@@ -5,11 +5,10 @@ import JavascriptObfuscator from '@/lib/javascriptobfuscator_unpacker';
 const TYPES_MAPPING = {
   Auto: process.browser && window.autoscan,
   Eval: process.browser && window.uneval,
+  'jsjiami/Obfuscator': process.browser && window.obdec_default,
+  'sojson v5': process.browser && window.dec_sojsonv5_default,
   'sojson v4': process.browser && window.decsojson4,
   'sojson 高级版': process.browser && window.decsojsonp,
-  'sojson v5': process.browser && window.dec_sojsonv5_default,
-  'jsjiami v6': process.browser && window.dec_jsjiamiv6_default,
-  'JS Obfuscator': process.browser && window.obdec_default,
   Unpacker: process.browser && JavascriptObfuscator.unpack,
 };
 
@@ -53,7 +52,7 @@ export default function Form({ onChange }) {
         value={formData.content}
         ref={textareaRef}
         name="content"
-        placeholder="Paste code here..."
+        placeholder={'Paste code here...\n\n⚠️ jsjiami.com.v5 not work'}
         spellCheck="false"
         autoCapitalize="off"
         autoComplete="off"

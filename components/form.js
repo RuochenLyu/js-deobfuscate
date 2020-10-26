@@ -24,7 +24,12 @@ export default function Form({ onChange }) {
   const handleSubmit = (event) => {
     event?.preventDefault();
     const fn = TYPES_MAPPING[formData.type];
-    const result = fn(formData.content);
+    let result;
+    try {
+      result = fn(formData.content);
+    } catch (error) {
+      result = `Failed!\n${error}`;
+    }
     onChange(result);
   };
 

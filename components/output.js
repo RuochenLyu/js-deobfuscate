@@ -29,6 +29,7 @@ export default function Output({ content: contentProp }) {
   return (
     <main>
       <pre>
+        {/^Failed/.test(content) && '💡 try JS Beautifier!'}
         <code ref={element} className="code">
           {content}
         </code>

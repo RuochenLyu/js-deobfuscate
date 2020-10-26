@@ -1,4 +1,6 @@
-import { useState, useRef } from 'react';
+import {
+  useState, useEffect, useRef,
+} from 'react';
 import useKeyPress from '@/modules/hooks/use-key-press';
 import JavascriptObfuscator from '@/lib/javascriptobfuscator_unpacker';
 
@@ -9,7 +11,7 @@ const TYPES_MAPPING = {
   'sojson v5': process.browser && window.dec_sojsonv5_default,
   'sojson v4': process.browser && window.decsojson4,
   'sojson 高级版': process.browser && window.decsojsonp,
-  Unpacker: process.browser && JavascriptObfuscator.unpack,
+  'JS Beautifier': process.browser && JavascriptObfuscator.unpack,
 };
 
 export default function Form({ onChange }) {
@@ -25,6 +27,10 @@ export default function Form({ onChange }) {
     const result = fn(formData.content);
     onChange(result);
   };
+
+  useEffect(() => {
+    handleSubmit();
+  }, [formData.content, formData.type]);
 
   useKeyPress(textareaRef.current, 'enter', (event) => {
     if (event.metaKey || event.ctrlKey) handleSubmit();
